@@ -3,26 +3,40 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const utilityLinks = [
-  { label: "About", path: "/about" },
-  { label: "Careers", path: "/careers" },
-  { label: "Connect", path: "/connect" },
-];
-
 const navItems = [
-  { label: "Services", path: "/services" },
+  {
+    label: "Services",
+    path: "/services",
+    children: [
+      { label: "IT Services", path: "/services" },
+      { label: "eCTD Submission Services", path: "/services" },
+      { label: "Regulatory Information Management", path: "/services" },
+      { label: "Data & Image Processing", path: "/services" },
+    ],
+  },
   {
     label: "Products",
     path: "/products",
     children: [
       { label: "ROSETTA eCTD Viewer", path: "/products/ectd-viewer" },
       { label: "ROSETTA GnosisVault", path: "/products/gnosisvault" },
-      { label: "ROSETTA Scribe", path: "/products/scribe" },
+      { label: "ROSETTA Scribe eCTD Publisher", path: "/products/scribe" },
       { label: "AperioTest.AI", path: "/products/aperiotest" },
     ],
   },
-  { label: "AI Solutions", path: "/ai-solutions" },
+  {
+    label: "AI Solutions",
+    path: "/ai-solutions",
+    children: [
+      { label: "ROSETTA eCTD Viewer with AI-powered Q&A", path: "/ai-solutions" },
+      { label: "ROSETTA Scribe - AI-assisted regulatory submission publishing", path: "/ai-solutions" },
+      { label: "ROSETTA GnosisVault - AI-powered Q&A for regulatory teams", path: "/ai-solutions" },
+    ],
+  },
+  { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contact" },
+  { label: "Connect", path: "/connect" },
+  { label: "About", path: "/about" },
 ];
 
 export default function Header() {
@@ -39,20 +53,6 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-[var(--card-shadow)]" : ""}`}>
-      {/* Utility bar - Gartner style */}
-      <div className="bg-primary text-primary-foreground hidden md:block">
-        <div className="container flex items-center justify-end h-8 gap-0">
-          {utilityLinks.map((item, i) => (
-            <Link
-              key={item.label}
-              to={item.path}
-              className="px-4 text-[12px] font-medium text-primary-foreground/70 hover:text-primary-foreground transition-colors border-l border-primary-foreground/10"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* Main nav */}
       <div className="bg-card border-b border-border">
@@ -96,7 +96,7 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 4 }}
                         transition={{ duration: 0.12 }}
-                        className="absolute top-full left-0 w-72 bg-card border border-border shadow-[var(--card-shadow-elevated)] rounded-sm py-2"
+                        className="absolute top-full left-0 min-w-[20rem] bg-card border border-border shadow-[var(--card-shadow-elevated)] rounded-sm py-2"
                       >
                         {item.children.map((child) => (
                           <Link
@@ -167,16 +167,6 @@ export default function Header() {
                     </Link>
                   ))}
                 </div>
-              ))}
-              {utilityLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-accent transition-colors"
-                >
-                  {item.label}
-                </Link>
               ))}
               <Link
                 to="/contact"
