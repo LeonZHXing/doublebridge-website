@@ -3,26 +3,40 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const utilityLinks = [
-  { label: "About", path: "/about" },
-  { label: "Careers", path: "/careers" },
-  { label: "Connect", path: "/connect" },
-];
-
 const navItems = [
-  { label: "Services", path: "/services" },
+  {
+    label: "Services",
+    path: "/services",
+    children: [
+      { label: "IT Services", path: "/services" },
+      { label: "eCTD Submission Services", path: "/services" },
+      { label: "Regulatory Information Management", path: "/services" },
+      { label: "Data & Image Processing", path: "/services" },
+    ],
+  },
   {
     label: "Products",
     path: "/products",
     children: [
       { label: "ROSETTA eCTD Viewer", path: "/products/ectd-viewer" },
       { label: "ROSETTA GnosisVault", path: "/products/gnosisvault" },
-      { label: "ROSETTA Scribe", path: "/products/scribe" },
+      { label: "ROSETTA Scribe eCTD Publisher", path: "/products/scribe" },
       { label: "AperioTest.AI", path: "/products/aperiotest" },
     ],
   },
-  { label: "AI Solutions", path: "/ai-solutions" },
+  {
+    label: "AI Solutions",
+    path: "/ai-solutions",
+    children: [
+      { label: "ROSETTA eCTD Viewer with AI-powered Q&A", path: "/ai-solutions" },
+      { label: "ROSETTA Scribe - AI-assisted regulatory submission publishing", path: "/ai-solutions" },
+      { label: "ROSETTA GnosisVault - AI-powered Q&A for regulatory teams", path: "/ai-solutions" },
+    ],
+  },
+  { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contact" },
+  { label: "Connect", path: "/connect" },
+  { label: "About", path: "/about" },
 ];
 
 export default function Header() {
