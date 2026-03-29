@@ -35,7 +35,7 @@ const navItems = [
   },
   { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contact" },
-  { label: "Connect", path: "/connect" },
+  
   { label: "About", path: "/about" },
 ];
 

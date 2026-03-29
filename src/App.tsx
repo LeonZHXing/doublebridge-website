@@ -9,7 +9,7 @@ import Products from "./pages/Products";
 import AISolutions from "./pages/AISolutions";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
-import Connect from "./pages/Connect";
+
 import About from "./pages/About";
 import ECTDViewer from "./pages/products/ECTDViewer";
 import GnosisVault from "./pages/products/GnosisVault";
@@ -38,7 +38,7 @@ const App = () => (
           <Route path="/ai-solutions" element={<AISolutions />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/connect" element={<Connect />} />
+          
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
