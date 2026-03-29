@@ -53,20 +53,6 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-[var(--card-shadow)]" : ""}`}>
-      {/* Utility bar - Gartner style */}
-      <div className="bg-primary text-primary-foreground hidden md:block">
-        <div className="container flex items-center justify-end h-8 gap-0">
-          {utilityLinks.map((item, i) => (
-            <Link
-              key={item.label}
-              to={item.path}
-              className="px-4 text-[12px] font-medium text-primary-foreground/70 hover:text-primary-foreground transition-colors border-l border-primary-foreground/10"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* Main nav */}
       <div className="bg-card border-b border-border">
@@ -181,16 +167,6 @@ export default function Header() {
                     </Link>
                   ))}
                 </div>
-              ))}
-              {utilityLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-accent transition-colors"
-                >
-                  {item.label}
-                </Link>
               ))}
               <Link
                 to="/contact"
