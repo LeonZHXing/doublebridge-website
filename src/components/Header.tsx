@@ -96,7 +96,7 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 4 }}
                         transition={{ duration: 0.12 }}
-                        className="absolute top-full left-0 w-72 bg-card border border-border shadow-[var(--card-shadow-elevated)] rounded-sm py-2"
+                        className="absolute top-full left-0 min-w-[20rem] bg-card border border-border shadow-[var(--card-shadow-elevated)] rounded-sm py-2"
                       >
                         {item.children.map((child) => (
                           <Link
