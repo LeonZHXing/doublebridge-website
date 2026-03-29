@@ -1,14 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", path: "/" },
-  {
-    label: "Services",
-    path: "/services",
-  },
+  { label: "Services", path: "/services" },
   {
     label: "Products",
     path: "/products",
@@ -19,10 +16,7 @@ const navItems = [
       { label: "AperioTest.AI", path: "/products/aperiotest" },
     ],
   },
-  {
-    label: "AI Solutions",
-    path: "/ai-solutions",
-  },
+  { label: "AI Solutions", path: "/ai-solutions" },
   { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contact" },
   { label: "Connect", path: "/connect" },
@@ -32,70 +26,85 @@ const navItems = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
+    <header className={`fixed top-0 left-0 right-0 z-50 header-glass border-b transition-all duration-300 ${scrolled ? "border-border shadow-[var(--card-shadow)]" : "border-transparent"}`}>
       <div className="container flex items-center justify-between h-[var(--nav-height)]">
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-lg">DB</span>
+          <div className="w-9 h-9 rounded-sm bg-accent flex items-center justify-center">
+            <span className="text-accent-foreground font-heading font-bold text-sm">DB</span>
           </div>
           <div className="leading-tight">
             <span className="font-heading font-bold text-lg text-foreground tracking-tight">DoubleBridge</span>
-            <span className="block text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-body">Technologies</span>
+            <span className="block text-[9px] uppercase tracking-[0.25em] text-muted-foreground font-body font-medium">Technologies</span>
           </div>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() => item.children && setOpenDropdown(item.label)}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link
-                to={item.path}
-                className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
-                  location.pathname === item.path || location.pathname.startsWith(item.path + "/")
-                    ? "text-accent"
-                    : "text-foreground hover:text-accent"
-                }`}
+        <nav className="hidden lg:flex items-center gap-0.5">
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
+            return (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.children && setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {item.label}
-                {item.children && <ChevronDown className="w-3.5 h-3.5" />}
-              </Link>
+                <Link
+                  to={item.path}
+                  className={`relative px-3 py-2 text-[13px] font-medium transition-colors flex items-center gap-1 ${
+                    isActive ? "text-accent" : "text-foreground/80 hover:text-foreground"
+                  }`}
+                >
+                  {item.label}
+                  {item.children && <ChevronDown className="w-3 h-3 opacity-50" />}
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-indicator"
+                      className="absolute bottom-0 left-3 right-3 h-[2px] bg-accent"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
+                    />
+                  )}
+                </Link>
 
-              <AnimatePresence>
-                {item.children && openDropdown === item.label && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 4 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 w-64 bg-card border border-border shadow-lg rounded-sm py-2"
-                  >
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.path}
-                        to={child.path}
-                        className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary hover:text-accent transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+                <AnimatePresence>
+                  {item.children && openDropdown === item.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 6 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 w-64 bg-card border border-border shadow-[var(--card-shadow-elevated)] rounded-sm py-1.5 mt-0.5"
+                    >
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          className="block px-4 py-2.5 text-[13px] text-foreground/80 hover:bg-accent/5 hover:text-accent transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </nav>
 
         <Link
           to="/contact"
-          className="hidden lg:inline-flex px-5 py-2.5 bg-accent text-accent-foreground text-sm font-medium rounded-sm hover:opacity-90 transition-opacity"
+          className="hidden lg:inline-flex px-5 py-2 bg-accent text-accent-foreground text-[13px] font-semibold rounded-sm hover:shadow-md hover:shadow-accent/15 transition-all duration-200"
         >
           Talk to Us
         </Link>
@@ -105,7 +114,7 @@ export default function Header() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden p-2 text-foreground"
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
@@ -113,12 +122,13 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
             className="lg:hidden overflow-hidden bg-card border-t border-border"
           >
-            <nav className="container py-4 flex flex-col gap-1">
+            <nav className="container py-4 flex flex-col gap-0.5">
               {navItems.map((item) => (
                 <div key={item.label}>
                   <Link
@@ -143,7 +153,7 @@ export default function Header() {
               <Link
                 to="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-medium rounded-sm text-center"
+                className="mt-3 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold rounded-sm text-center"
               >
                 Talk to Us
               </Link>
