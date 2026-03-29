@@ -40,7 +40,7 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-[var(--card-shadow)]" : ""}`}>
       {/* Utility bar - Gartner style */}
-      <div className="bg-primary text-primary-foreground hidden lg:block">
+      <div className="bg-primary text-primary-foreground hidden md:block">
         <div className="container flex items-center justify-end h-8 gap-0">
           {utilityLinks.map((item, i) => (
             <Link
@@ -67,7 +67,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-0">
+          <nav className="hidden md:flex items-center gap-0">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
               return (
@@ -116,7 +116,7 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <Link
               to="/contact"
               className="px-6 py-2.5 bg-accent text-accent-foreground text-[13px] font-semibold rounded-sm hover:shadow-md hover:shadow-accent/15 transition-all duration-200 flex items-center gap-2"
@@ -129,7 +129,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -144,7 +144,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden overflow-hidden bg-card border-t border-border"
+            className="md:hidden overflow-hidden bg-card border-t border-border"
           >
             <nav className="container py-4 flex flex-col gap-0.5">
               {navItems.map((item) => (
