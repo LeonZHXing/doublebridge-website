@@ -34,7 +34,7 @@
     --input: 220 13% 87%;
     --ring: 214 100% 44%;
 
-    --radius: 0.125rem;
+    --radius: 0.1875rem;
 
     --nav-height: 4.5rem;
 
@@ -47,10 +47,12 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(222 68% 18%) 0%, hsl(222 55% 28%) 50%, hsl(214 100% 44%) 100%);
+    --hero-gradient: linear-gradient(135deg, hsl(222 68% 14%) 0%, hsl(222 55% 22%) 40%, hsl(214 80% 32%) 100%);
+    --hero-gradient-overlay: radial-gradient(ellipse 80% 60% at 70% 40%, hsl(214 100% 44% / 0.15) 0%, transparent 70%);
     --section-gradient: linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 25% 94%) 100%);
-    --card-shadow: 0 1px 3px 0 hsl(222 47% 11% / 0.06), 0 1px 2px -1px hsl(222 47% 11% / 0.06);
-    --card-shadow-hover: 0 10px 25px -5px hsl(222 47% 11% / 0.08), 0 8px 10px -6px hsl(222 47% 11% / 0.04);
+    --card-shadow: 0 1px 3px 0 hsl(222 47% 11% / 0.05), 0 1px 2px -1px hsl(222 47% 11% / 0.04);
+    --card-shadow-hover: 0 20px 40px -12px hsl(222 47% 11% / 0.12), 0 8px 20px -8px hsl(214 100% 44% / 0.08);
+    --card-shadow-elevated: 0 8px 24px -4px hsl(222 47% 11% / 0.08), 0 4px 8px -2px hsl(222 47% 11% / 0.04);
   }
 
   .dark {
@@ -102,4 +104,42 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Refined glassmorphism for header */
+.header-glass {
+  background: hsl(var(--card) / 0.85);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+
+/* Accent line animation */
+.accent-line {
+  position: relative;
+}
+.accent-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: hsl(var(--accent));
+  transition: width 0.3s ease;
+}
+.accent-line:hover::after {
+  width: 100%;
+}
+
+/* Hero mesh pattern */
+.hero-mesh {
+  background-image: 
+    linear-gradient(hsl(0 0% 100% / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(0 0% 100% / 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Stat counter glow */
+.stat-glow {
+  text-shadow: 0 0 40px hsl(214 100% 44% / 0.3);
 }
