@@ -8,10 +8,10 @@ const navItems = [
     label: "Services",
     path: "/services",
     children: [
-      { label: "IT Services", path: "/services" },
-      { label: "eCTD Submission Services", path: "/services" },
-      { label: "Regulatory Information Management", path: "/services" },
-      { label: "Data & Image Processing", path: "/services" },
+      { label: "IT Services", path: "/services/it-services" },
+      { label: "eCTD Submission Services", path: "/services/ectd-submission" },
+      { label: "Regulatory Information Management", path: "/services/regulatory-information-management" },
+      { label: "Data & Image Processing", path: "/services/data-image-processing" },
     ],
   },
   {
@@ -28,14 +28,12 @@ const navItems = [
     label: "AI Solutions",
     path: "/ai-solutions",
     children: [
-      { label: "ROSETTA eCTD Viewer with AI-powered Q&A", path: "/ai-solutions" },
-      { label: "ROSETTA Scribe - AI-assisted regulatory submission publishing", path: "/ai-solutions" },
-      { label: "ROSETTA GnosisVault - AI-powered Q&A for regulatory teams", path: "/ai-solutions" },
+      { label: "ROSETTA eCTD Viewer with AI-powered Q&A", path: "/ai-solutions/ectd-viewer-ai" },
+      { label: "ROSETTA Scribe - AI-assisted publishing", path: "/ai-solutions/scribe-ai" },
+      { label: "ROSETTA GnosisVault - AI-powered Q&A", path: "/ai-solutions/gnosisvault-ai" },
     ],
   },
   { label: "Careers", path: "/careers" },
-  { label: "Contact Us", path: "/contact" },
-  
   { label: "About", path: "/about" },
 ];
 
