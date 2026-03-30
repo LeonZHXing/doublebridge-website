@@ -9,12 +9,18 @@ import Products from "./pages/Products";
 import AISolutions from "./pages/AISolutions";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
-
 import About from "./pages/About";
 import ECTDViewer from "./pages/products/ECTDViewer";
 import GnosisVault from "./pages/products/GnosisVault";
 import Scribe from "./pages/products/Scribe";
 import AperioTest from "./pages/products/AperioTest";
+import ITServices from "./pages/services/ITServices";
+import ECTDSubmission from "./pages/services/ECTDSubmission";
+import RegulatoryIM from "./pages/services/RegulatoryIM";
+import DataImageProcessing from "./pages/services/DataImageProcessing";
+import ECTDViewerAI from "./pages/ai-solutions/ECTDViewerAI";
+import ScribeAI from "./pages/ai-solutions/ScribeAI";
+import GnosisVaultAI from "./pages/ai-solutions/GnosisVaultAI";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -30,15 +36,21 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/it-services" element={<ITServices />} />
+          <Route path="/services/ectd-submission" element={<ECTDSubmission />} />
+          <Route path="/services/regulatory-information-management" element={<RegulatoryIM />} />
+          <Route path="/services/data-image-processing" element={<DataImageProcessing />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/ectd-viewer" element={<ECTDViewer />} />
           <Route path="/products/gnosisvault" element={<GnosisVault />} />
           <Route path="/products/scribe" element={<Scribe />} />
           <Route path="/products/aperiotest" element={<AperioTest />} />
           <Route path="/ai-solutions" element={<AISolutions />} />
+          <Route path="/ai-solutions/ectd-viewer-ai" element={<ECTDViewerAI />} />
+          <Route path="/ai-solutions/scribe-ai" element={<ScribeAI />} />
+          <Route path="/ai-solutions/gnosisvault-ai" element={<GnosisVaultAI />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
-          
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
