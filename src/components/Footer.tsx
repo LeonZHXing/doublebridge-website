@@ -97,19 +97,6 @@ export default function Footer() {
 
         <div className="mt-14 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-primary-foreground/35 font-body">© {new Date().getFullYear()} DoubleBridge Technologies, Inc. All rights reserved.</p>
-          <div className="flex gap-5">
-            {[
-              { label: "LinkedIn", url: "https://www.linkedin.com/company/392512" },
-              { label: "Twitter", url: "http://twitter.com/doublebridgetec" },
-              { label: "YouTube", url: "http://www.youtube.com/user/DoubleBridgeTec" },
-              { label: "Facebook", url: "http://www.facebook.com/home.php#!/pages/DoubleBridge-Technologies/193420894016078" },
-            ].map((s) => (
-              <a key={s.label} href={s.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs text-primary-foreground/35 hover:text-primary-foreground/70 transition-colors font-body">
-                {s.label}
-                <ArrowUpRight className="w-3 h-3" />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
