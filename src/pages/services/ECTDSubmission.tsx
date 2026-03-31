@@ -18,6 +18,7 @@ const services = [
 ];
 
 export default function ECTDSubmission() {
+  usePageTitle("eCTD Submission Services");
   return (
     <Layout>
       <PageHero

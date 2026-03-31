@@ -19,6 +19,7 @@ const staggerItem = {
 };
 
 export default function Index() {
+  usePageTitle();
   return (
     <Layout>
       {/* Hero */}

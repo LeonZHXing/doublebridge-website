@@ -38,6 +38,7 @@ const whyItMatters = [
 ];
 
 export default function AperioTest() {
+  usePageTitle("AperioTest.AI");
   return (
     <Layout>
       <PageHero

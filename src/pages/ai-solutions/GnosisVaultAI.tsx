@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Brain, MessageSquare, Database, Shield, Users, Search } from "lucide-react";
 
 export default function GnosisVaultAI() {
+  usePageTitle("GnosisVault AI-powered Q&A");
   return (
     <Layout>
       <PageHero

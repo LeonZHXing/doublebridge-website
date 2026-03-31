@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Settings, Monitor, Database, Shield, Workflow, Headphones } from "lucide-react";
 
 export default function ITServices() {
+  usePageTitle("IT Services");
   return (
     <Layout>
       <PageHero

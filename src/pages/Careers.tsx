@@ -27,6 +27,7 @@ const openings = [
 ];
 
 export default function Careers() {
+  usePageTitle("Careers");
   return (
     <Layout>
       <PageHero

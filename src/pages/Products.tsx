@@ -41,6 +41,7 @@ const products = [
 ];
 
 export default function Products() {
+  usePageTitle("Products");
   return (
     <Layout>
       <PageHero

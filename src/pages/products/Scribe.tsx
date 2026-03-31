@@ -50,6 +50,7 @@ const managementFeatures = [
 ];
 
 export default function Scribe() {
+  usePageTitle("ROSETTA Scribe eCTD Publisher");
   return (
     <Layout>
       <PageHero

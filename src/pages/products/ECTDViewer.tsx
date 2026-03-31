@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Zap, CheckCircle, Shield, Download } from "lucide-react";
 
 export default function ECTDViewer() {
+  usePageTitle("ROSETTA eCTD Viewer");
   return (
     <Layout>
       <PageHero
