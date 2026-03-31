@@ -56,8 +56,8 @@ export default function Header() {
       {/* Main nav */}
       <div className="bg-card border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center shrink-0">
-            <img src={logo} alt="DoubleBridge Technologies" className="h-10 w-auto" />
+          <Link to="/" className="flex items-center shrink-0 py-2">
+            <img src={logo} alt="DoubleBridge Technologies" className="h-8 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}
