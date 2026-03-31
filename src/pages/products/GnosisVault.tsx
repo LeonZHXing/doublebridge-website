@@ -1,3 +1,4 @@
+import { usePageTitle } from "@/hooks/use-page-title";
 import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { Database, Lock, FileSearch, Shield } from "lucide-react";

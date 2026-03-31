@@ -1,3 +1,4 @@
+import { usePageTitle } from "@/hooks/use-page-title";
 import Layout from "@/components/Layout";
 import { PageHero } from "@/components/PageSections";
 import { motion } from "framer-motion";
