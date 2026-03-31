@@ -1,9 +1,11 @@
+import { usePageTitle } from "@/hooks/use-page-title";
 import Layout from "@/components/Layout";
 import { PageHero, SectionHeading } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Globe, Award, Users, Clock } from "lucide-react";
 
 export default function About() {
+  usePageTitle("About");
   return (
     <Layout>
       <PageHero

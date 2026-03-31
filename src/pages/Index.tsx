@@ -1,3 +1,4 @@
+import { usePageTitle } from "@/hooks/use-page-title";
 import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { Link } from "react-router-dom";
@@ -18,6 +19,7 @@ const staggerItem = {
 };
 
 export default function Index() {
+  usePageTitle();
   return (
     <Layout>
       {/* Hero */}

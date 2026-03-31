@@ -1,3 +1,4 @@
+import { usePageTitle } from "@/hooks/use-page-title";
 import Layout from "@/components/Layout";
 import { PageHero, SectionHeading } from "@/components/PageSections";
 import { motion } from "framer-motion";
@@ -49,6 +50,7 @@ const managementFeatures = [
 ];
 
 export default function Scribe() {
+  usePageTitle("ROSETTA Scribe eCTD Publisher");
   return (
     <Layout>
       <PageHero

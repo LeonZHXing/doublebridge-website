@@ -1,3 +1,4 @@
+import { usePageTitle } from "@/hooks/use-page-title";
 import Layout from "@/components/Layout";
 import { PageHero, SectionHeading } from "@/components/PageSections";
 import { motion } from "framer-motion";
@@ -37,6 +38,7 @@ const whyItMatters = [
 ];
 
 export default function AperioTest() {
+  usePageTitle("AperioTest.AI");
   return (
     <Layout>
       <PageHero
