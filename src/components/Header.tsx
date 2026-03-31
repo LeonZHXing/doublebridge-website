@@ -55,9 +55,9 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="bg-card border-b border-border">
-        <div className="container flex items-center justify-between h-[72px]">
+        <div className="container flex items-center justify-between h-20">
           <Link to="/" className="flex items-center shrink-0">
-            <img src={logo} alt="DoubleBridge Technologies" className="h-12 w-auto object-contain" />
+            <img src={logo} alt="DoubleBridge Technologies" className="h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}
