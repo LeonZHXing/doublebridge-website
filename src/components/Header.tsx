@@ -56,13 +56,8 @@ export default function Header() {
       {/* Main nav */}
       <div className="bg-card border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-8 h-8 rounded-sm bg-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-heading font-bold text-xs">DB</span>
-            </div>
-            <div className="leading-tight">
-              <span className="font-heading font-bold text-[17px] text-foreground tracking-tight">DoubleBridge</span>
-            </div>
+          <Link to="/" className="flex items-center shrink-0">
+            <img src={logo} alt="DoubleBridge Technologies" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop nav */}
