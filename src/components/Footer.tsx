@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 export default function Footer() {
   return (
@@ -9,14 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-8 h-8 rounded-sm bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-xs">DB</span>
-              </div>
-              <div className="leading-tight">
-                <span className="font-heading font-bold text-base text-primary-foreground">DoubleBridge</span>
-                <span className="block text-[8px] uppercase tracking-[0.25em] text-primary-foreground/50 font-body font-medium">Technologies</span>
-              </div>
+            <div className="mb-5">
+              <img src={logo} alt="DoubleBridge Technologies" className="h-10 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed font-body">
               Established in 1997, providing global Life Sciences organizations with reliable business and technology solutions.
