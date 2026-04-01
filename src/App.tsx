@@ -47,7 +47,13 @@ const App = () => (
           <Route path="/services/regulatory-information-management" element={<RegulatoryIM />} />
           <Route path="/services/data-image-processing" element={<DataImageProcessing />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/products/ectd-viewer" element={<ECTDViewer />} />
+          <Route path="/products/ectd-viewer" element={<ECTDViewerHome />} />
+          <Route path="/products/ectd-viewer/desktop" element={<ECTDViewerDesktop />} />
+          <Route path="/products/ectd-viewer/features" element={<ECTDViewerFeatures />} />
+          <Route path="/products/ectd-viewer/download" element={<ECTDViewerDownload />} />
+          <Route path="/products/ectd-viewer/pricing" element={<ECTDViewerPricing />} />
+          <Route path="/products/ectd-viewer/enterprise" element={<ECTDViewerEnterprise />} />
+          <Route path="/products/ectd-viewer/radars" element={<ECTDViewerRADARS />} />
           <Route path="/products/gnosisvault" element={<GnosisVault />} />
           <Route path="/products/scribe" element={<Scribe />} />
           <Route path="/products/aperiotest" element={<AperioTest />} />
