@@ -10,7 +10,13 @@ import AISolutions from "./pages/AISolutions";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import ECTDViewer from "./pages/products/ECTDViewer";
+import ECTDViewerHome from "./pages/products/ectd-viewer/ECTDViewerHome";
+import ECTDViewerDesktop from "./pages/products/ectd-viewer/ECTDViewerDesktop";
+import ECTDViewerFeatures from "./pages/products/ectd-viewer/ECTDViewerFeatures";
+import ECTDViewerDownload from "./pages/products/ectd-viewer/ECTDViewerDownload";
+import ECTDViewerPricing from "./pages/products/ectd-viewer/ECTDViewerPricing";
+import ECTDViewerEnterprise from "./pages/products/ectd-viewer/ECTDViewerEnterprise";
+import ECTDViewerRADARS from "./pages/products/ectd-viewer/ECTDViewerRADARS";
 import GnosisVault from "./pages/products/GnosisVault";
 import Scribe from "./pages/products/Scribe";
 import AperioTest from "./pages/products/AperioTest";
@@ -41,7 +47,13 @@ const App = () => (
           <Route path="/services/regulatory-information-management" element={<RegulatoryIM />} />
           <Route path="/services/data-image-processing" element={<DataImageProcessing />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/products/ectd-viewer" element={<ECTDViewer />} />
+          <Route path="/products/ectd-viewer" element={<ECTDViewerHome />} />
+          <Route path="/products/ectd-viewer/desktop" element={<ECTDViewerDesktop />} />
+          <Route path="/products/ectd-viewer/features" element={<ECTDViewerFeatures />} />
+          <Route path="/products/ectd-viewer/download" element={<ECTDViewerDownload />} />
+          <Route path="/products/ectd-viewer/pricing" element={<ECTDViewerPricing />} />
+          <Route path="/products/ectd-viewer/enterprise" element={<ECTDViewerEnterprise />} />
+          <Route path="/products/ectd-viewer/radars" element={<ECTDViewerRADARS />} />
           <Route path="/products/gnosisvault" element={<GnosisVault />} />
           <Route path="/products/scribe" element={<Scribe />} />
           <Route path="/products/aperiotest" element={<AperioTest />} />
