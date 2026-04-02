@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowUpRight, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.jpg";
 
@@ -38,6 +38,12 @@ const navItems = [
   { label: "About", path: "/about" },
 ];
 
+const utilityLinks = [
+  { label: "About", path: "/about" },
+  { label: "Careers", path: "/careers" },
+  { label: "Contact", path: "/contact" },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -50,55 +56,96 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-[var(--card-shadow)]" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${scrolled ? "shadow-md" : ""}`}>
+      {/* Utility bar - Gartner style thin top bar */}
+      <div className="bg-card border-b border-border/50 hidden md:block">
+        <div className="container flex items-center justify-end h-9 gap-0">
+          {utilityLinks.map((item, i) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`text-[12.5px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 px-4 py-1 ${
+                i < utilityLinks.length - 1 ? "border-r border-border/60" : ""
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Main navigation bar */}
       <div className="bg-card border-b border-border">
-        <div className="container flex items-center h-20">
-          {/* Logo - much bigger */}
-          <Link to="/" className="flex items-center shrink-0 mr-8">
-            <img src={logo} alt="DoubleBridge Technologies" className="h-14 w-auto object-contain" />
+        <div className="container flex items-center h-[72px]">
+          {/* Logo - large, prominent */}
+          <Link to="/" className="flex items-center shrink-0 mr-10 group">
+            <img
+              src={logo}
+              alt="DoubleBridge Technologies"
+              className="h-[52px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            />
           </Link>
 
-          {/* Desktop nav - left-aligned next to logo (Gartner style) */}
-          <nav className="hidden md:flex items-center gap-0 flex-1">
+          {/* Desktop nav - left-aligned, Gartner style */}
+          <nav className="hidden md:flex items-center gap-0 flex-1 h-full">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
               return (
                 <div
                   key={item.label}
-                  className="relative"
+                  className="relative h-full flex items-center"
                   onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <Link
                     to={item.path}
-                    className={`relative px-4 py-6 text-[14px] font-medium transition-colors flex items-center gap-1 border-b-2 ${
-                      isActive
-                        ? "text-accent border-accent"
-                        : "text-foreground/70 hover:text-foreground border-transparent hover:border-accent/40"
-                    }`}
+                    className="gartner-nav-link relative px-4 h-full flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 group"
                   >
-                    {item.label}
-                    {item.children && <ChevronDown className="w-3.5 h-3.5 opacity-50" />}
+                    <span className={`transition-colors duration-200 ${
+                      isActive ? "text-accent" : "text-foreground/75 group-hover:text-foreground"
+                    }`}>
+                      {item.label}
+                    </span>
+                    {item.children && (
+                      <ChevronDown className={`w-3.5 h-3.5 transition-all duration-200 ${
+                        openDropdown === item.label ? "rotate-180 text-accent" : "text-foreground/40 group-hover:text-foreground/60"
+                      }`} />
+                    )}
+                    {/* Gartner-style bottom underline that slides in from left */}
+                    <span className={`absolute bottom-0 left-0 h-[3px] bg-accent transition-all duration-300 ease-out ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`} />
                   </Link>
 
+                  {/* Dropdown with Gartner-style animation */}
                   <AnimatePresence>
                     {item.children && openDropdown === item.label && (
                       <motion.div
-                        initial={{ opacity: 0, y: 4 }}
+                        initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 4 }}
-                        transition={{ duration: 0.12 }}
-                        className="absolute top-full left-0 min-w-[20rem] bg-card border border-border shadow-[var(--card-shadow-elevated)] rounded-sm py-2"
+                        exit={{ opacity: 0, y: -4 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        className="absolute top-full left-0 min-w-[22rem] bg-card border border-border shadow-lg shadow-foreground/5 py-2"
                       >
+                        {/* Top accent line */}
+                        <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent" />
                         {item.children.map((child) => (
                           <Link
                             key={child.path}
                             to={child.path}
-                            className="flex items-center justify-between px-5 py-3 text-[14px] text-foreground/70 hover:bg-accent/5 hover:text-accent transition-colors group"
+                            className="relative flex items-center justify-between px-6 py-3.5 text-[14px] text-foreground/70 hover:text-accent hover:bg-accent/[0.03] transition-all duration-150 group/item"
                           >
-                            {child.label}
-                            <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <span className="relative">
+                              {child.label}
+                              <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-accent transition-all duration-200 group-hover/item:w-full" />
+                            </span>
+                            <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
                           </Link>
                         ))}
                       </motion.div>
@@ -109,44 +156,58 @@ export default function Header() {
             })}
           </nav>
 
-          {/* CTA - far right */}
-          <div className="hidden md:flex items-center gap-3 ml-auto">
+          {/* CTA - far right, Gartner style rounded button */}
+          <div className="hidden md:flex flex-col items-center gap-1 ml-auto shrink-0">
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-accent text-accent-foreground text-[13px] font-semibold rounded-sm hover:shadow-md hover:shadow-accent/15 transition-all duration-200 flex items-center gap-2"
+              className="px-7 py-3 bg-primary text-primary-foreground text-[14px] font-semibold rounded-full hover:bg-primary/90 transition-all duration-200 flex items-center gap-2 group shadow-sm hover:shadow-md"
             >
               Talk to Us
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
+            <span className="text-[11px] text-muted-foreground">
+              or call <a href="tel:6097169001" className="hover:text-foreground transition-colors">(609) 716-9001</a>
+            </span>
           </div>
 
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 text-foreground ml-auto"
+            aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <AnimatePresence mode="wait">
+              {mobileOpen ? (
+                <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                  <X className="w-6 h-6" />
+                </motion.div>
+              ) : (
+                <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                  <Menu className="w-6 h-6" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </button>
         </div>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobile nav - full screen overlay style */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden overflow-hidden bg-card border-t border-border"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="md:hidden bg-card border-t border-border shadow-lg max-h-[80vh] overflow-y-auto"
           >
-            <nav className="container py-4 flex flex-col gap-0.5">
+            <nav className="container py-6 flex flex-col gap-1">
               {navItems.map((item) => (
                 <div key={item.label}>
                   <Link
                     to={item.path}
                     onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-2.5 text-sm font-medium text-foreground hover:text-accent transition-colors"
+                    className="block px-3 py-3 text-[15px] font-semibold text-foreground hover:text-accent transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -162,13 +223,15 @@ export default function Header() {
                   ))}
                 </div>
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-3 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold rounded-sm text-center"
-              >
-                Talk to Us
-              </Link>
+              <div className="mt-4 pt-4 border-t border-border">
+                <Link
+                  to="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-6 py-3 bg-primary text-primary-foreground text-sm font-semibold rounded-full text-center"
+                >
+                  Talk to Us
+                </Link>
+              </div>
             </nav>
           </motion.div>
         )}

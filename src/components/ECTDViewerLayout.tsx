@@ -32,7 +32,7 @@ export default function ECTDViewerLayout({ children }: { children: ReactNode }) 
       <Header />
 
       {/* Secondary eCTD Viewer sub-navigation bar */}
-      <div className="fixed top-20 left-0 right-0 z-40 bg-muted/80 backdrop-blur-sm border-b border-border">
+      <div className="fixed top-[108px] left-0 right-0 z-40 bg-muted/80 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center h-11">
           {/* Product label */}
           <span className="text-[13px] font-semibold text-accent mr-6 shrink-0 hidden md:block">
@@ -154,8 +154,8 @@ export default function ECTDViewerLayout({ children }: { children: ReactNode }) 
         </AnimatePresence>
       </div>
 
-      {/* Content: offset for main header (80px) + sub-nav (44px) = 124px */}
-      <main className="flex-1 pt-[124px]">{children}</main>
+      {/* Content: offset for utility(36px) + main nav(72px) + sub-nav(44px) = 152px */}
+      <main className="flex-1 pt-[152px]">{children}</main>
       <Footer />
     </div>
   );
