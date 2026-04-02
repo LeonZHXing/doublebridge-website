@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, Search, ArrowUpRight } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.jpg";
 
@@ -52,16 +52,15 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-[var(--card-shadow)]" : ""}`}>
-
-      {/* Main nav */}
       <div className="bg-card border-b border-border">
-        <div className="container flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center shrink-0">
-            <img src={logo} alt="DoubleBridge Technologies" className="h-16 w-auto object-contain" />
+        <div className="container flex items-center h-20">
+          {/* Logo - much bigger */}
+          <Link to="/" className="flex items-center shrink-0 mr-8">
+            <img src={logo} alt="DoubleBridge Technologies" className="h-14 w-auto object-contain" />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-0">
+          {/* Desktop nav - left-aligned next to logo (Gartner style) */}
+          <nav className="hidden md:flex items-center gap-0 flex-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
               return (
@@ -73,7 +72,7 @@ export default function Header() {
                 >
                   <Link
                     to={item.path}
-                    className={`relative px-4 py-5 text-[14px] font-medium transition-colors flex items-center gap-1 border-b-2 ${
+                    className={`relative px-4 py-6 text-[14px] font-medium transition-colors flex items-center gap-1 border-b-2 ${
                       isActive
                         ? "text-accent border-accent"
                         : "text-foreground/70 hover:text-foreground border-transparent hover:border-accent/40"
@@ -110,7 +109,8 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          {/* CTA - far right */}
+          <div className="hidden md:flex items-center gap-3 ml-auto">
             <Link
               to="/contact"
               className="px-6 py-2.5 bg-accent text-accent-foreground text-[13px] font-semibold rounded-sm hover:shadow-md hover:shadow-accent/15 transition-all duration-200 flex items-center gap-2"
@@ -123,7 +123,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground ml-auto"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
