@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import doublebridgeLogo from "@/assets/doublebridge-logo.png";
 
 
 export default function Footer() {
