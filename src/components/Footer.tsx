@@ -12,9 +12,7 @@ export default function Footer() {
           {/* Company */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-8 h-8 rounded-sm bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-xs">DB</span>
-              </div>
+              <img src={doublebridgeLogo} alt="DoubleBridge Technologies" className="w-8 h-8 rounded-sm object-contain" />
               <div className="leading-tight">
                 <span className="font-heading font-bold text-base text-primary-foreground">DoubleBridge</span>
                 <span className="block text-[8px] uppercase tracking-[0.25em] text-primary-foreground/50 font-body font-medium">Technologies</span>
