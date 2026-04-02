@@ -154,8 +154,8 @@ export default function ECTDViewerLayout({ children }: { children: ReactNode }) 
         </AnimatePresence>
       </div>
 
-      {/* Content: offset for main header (80px) + sub-nav (44px) = 124px */}
-      <main className="flex-1 pt-[124px]">{children}</main>
+      {/* Content: offset for utility(36px) + main nav(72px) + sub-nav(44px) = 152px */}
+      <main className="flex-1 pt-[152px]">{children}</main>
       <Footer />
     </div>
   );
