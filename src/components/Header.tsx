@@ -141,7 +141,7 @@ export default function Header() {
           </nav>
 
           {/* CTA - far right, Gartner style rounded button */}
-          <div className="hidden md:flex flex-col items-center gap-1 ml-auto shrink-0">
+          <div className="hidden md:flex items-center ml-auto shrink-0">
             <Link
               to="/contact"
               className="px-7 py-3 bg-primary text-primary-foreground text-[14px] font-semibold rounded-full hover:bg-primary/90 transition-all duration-200 flex items-center gap-2 group shadow-sm hover:shadow-md"
@@ -149,9 +149,6 @@ export default function Header() {
               Talk to Us
               <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-            <span className="text-[11px] text-muted-foreground">
-              or call <a href="tel:6097169001" className="hover:text-foreground transition-colors">(609) 716-9001</a>
-            </span>
           </div>
 
           {/* Mobile toggle */}
