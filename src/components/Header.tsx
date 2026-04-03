@@ -89,8 +89,12 @@ export default function Header() {
                 >
                   <Link
                     to={item.path}
-                    className="gartner-nav-link relative px-4 h-full flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 group"
+                    className="relative px-4 h-full flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 group"
                   >
+                    {/* Gartner-style vertical left bar */}
+                    <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[3px] bg-accent transition-all duration-200 ease-out ${
+                      isActive ? "h-6" : "h-0 group-hover:h-6"
+                    }`} />
                     <span className={`transition-colors duration-200 ${
                       isActive ? "text-accent" : "text-foreground/75 group-hover:text-foreground"
                     }`}>
@@ -101,10 +105,6 @@ export default function Header() {
                         openDropdown === item.label ? "rotate-180 text-accent" : "text-foreground/40 group-hover:text-foreground/60"
                       }`} />
                     )}
-                    {/* Gartner-style bottom underline that slides in from left */}
-                    <span className={`absolute bottom-0 left-0 h-[3px] bg-accent transition-all duration-300 ease-out ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`} />
                   </Link>
 
                   {/* Dropdown with Gartner-style animation */}
@@ -125,10 +125,9 @@ export default function Header() {
                             to={child.path}
                             className="relative flex items-center justify-between px-6 py-3.5 text-[14px] text-foreground/70 hover:text-accent hover:bg-accent/[0.03] transition-all duration-150 group/item"
                           >
-                            <span className="relative">
-                              {child.label}
-                              <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-accent transition-all duration-200 group-hover/item:w-full" />
-                            </span>
+                            {/* Vertical left bar on hover */}
+                            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-0 bg-accent transition-all duration-200 group-hover/item:h-5" />
+                            <span>{child.label}</span>
                             <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
                           </Link>
                         ))}
