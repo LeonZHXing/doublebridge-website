@@ -6,8 +6,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      {/* Account for utility bar (36px) + main nav (72px) = 108px */}
-      <main className="flex-1 pt-[108px]">{children}</main>
+      <main className="flex-1 pt-[72px]">{children}</main>
       <Footer />
     </div>
   );
