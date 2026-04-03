@@ -63,22 +63,6 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${scrolled ? "shadow-md" : ""}`}>
-      {/* Utility bar - Gartner style thin top bar */}
-      <div className="bg-card border-b border-border/50 hidden md:block">
-        <div className="container flex items-center justify-end h-9 gap-0">
-          {utilityLinks.map((item, i) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`text-[12.5px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 px-4 py-1 ${
-                i < utilityLinks.length - 1 ? "border-r border-border/60" : ""
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* Main navigation bar */}
       <div className="bg-card border-b border-border">
