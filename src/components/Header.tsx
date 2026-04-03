@@ -89,8 +89,12 @@ export default function Header() {
                 >
                   <Link
                     to={item.path}
-                    className="gartner-nav-link relative px-4 h-full flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 group"
+                    className="relative px-4 h-full flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 group"
                   >
+                    {/* Gartner-style vertical left bar */}
+                    <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[3px] bg-accent transition-all duration-200 ease-out ${
+                      isActive ? "h-6" : "h-0 group-hover:h-6"
+                    }`} />
                     <span className={`transition-colors duration-200 ${
                       isActive ? "text-accent" : "text-foreground/75 group-hover:text-foreground"
                     }`}>
@@ -101,10 +105,6 @@ export default function Header() {
                         openDropdown === item.label ? "rotate-180 text-accent" : "text-foreground/40 group-hover:text-foreground/60"
                       }`} />
                     )}
-                    {/* Gartner-style bottom underline that slides in from left */}
-                    <span className={`absolute bottom-0 left-0 h-[3px] bg-accent transition-all duration-300 ease-out ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`} />
                   </Link>
 
                   {/* Dropdown with Gartner-style animation */}
