@@ -112,7 +112,7 @@ export default function Index() {
               { icon: <Database className="w-5 h-5" />, title: "Data Migration", description: "Reliable data migration services ensuring data integrity and minimal disruption to your operations.", to: "/services" },
               { icon: <Cpu className="w-5 h-5" />, title: "AI Solutions", description: "Purpose-built AI solutions for Life Sciences validation, regulatory publishing, and test automation.", to: "/ai-solutions" },
             ].map((item) => (
-              <motion.div key={item.title} variants={staggerItem}>
+              <motion.div key={item.title} variants={staggerItem} className="h-full">
                 <FeatureCard
                   icon={item.icon}
                   title={item.title}
