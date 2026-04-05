@@ -52,7 +52,7 @@ export default function Services() {
             title="Our Services"
             subtitle="Comprehensive IT and software services for Life Sciences organizations worldwide."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 [&>*]:h-full">
             <FeatureCard
               icon={<Settings className="w-6 h-6" />}
               title="Software Development"

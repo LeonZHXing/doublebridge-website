@@ -21,7 +21,7 @@ export default function AISolutions() {
             subtitle="Our AI solutions are specifically designed for the unique requirements of Life Sciences, ensuring compliance while maximizing efficiency."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 [&>*]:h-full">
             <FeatureCard
               icon={<FileText className="w-6 h-6" />}
               title="ROSETTA Scribe — AI-Assisted Publishing"

@@ -146,7 +146,7 @@ export function FeatureCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.45 }}
-      className="group relative bg-card border border-border p-7 rounded-sm shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-all duration-300 hover:border-accent/20"
+      className="group relative h-full flex flex-col bg-card border border-border p-7 rounded-sm shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-all duration-300 hover:border-accent/20"
     >
       {/* Top accent line on hover */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -155,7 +155,7 @@ export function FeatureCard({
         {icon}
       </div>
       <h3 className="font-heading font-semibold text-base text-foreground mb-2 group-hover:text-accent transition-colors duration-200">{title}</h3>
-      <p className="text-muted-foreground text-sm leading-relaxed font-body">{description}</p>
+      <p className="text-muted-foreground text-sm leading-relaxed font-body flex-1">{description}</p>
       {link && (
         <Link
           to={link.to}

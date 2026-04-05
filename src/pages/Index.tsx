@@ -112,7 +112,7 @@ export default function Index() {
               { icon: <Database className="w-5 h-5" />, title: "Data Migration", description: "Reliable data migration services ensuring data integrity and minimal disruption to your operations.", to: "/services" },
               { icon: <Cpu className="w-5 h-5" />, title: "AI Solutions", description: "Purpose-built AI solutions for Life Sciences validation, regulatory publishing, and test automation.", to: "/ai-solutions" },
             ].map((item) => (
-              <motion.div key={item.title} variants={staggerItem}>
+              <motion.div key={item.title} variants={staggerItem} className="h-full">
                 <FeatureCard
                   icon={item.icon}
                   title={item.title}
@@ -170,22 +170,22 @@ export default function Index() {
               >
                 <Link
                   to={product.path}
-                  className="group relative flex items-start gap-5 bg-background border border-border p-7 rounded-sm shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-all duration-300 overflow-hidden"
+                  className="group relative flex flex-col h-full bg-background border border-border p-7 rounded-sm shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-all duration-300 overflow-hidden"
                 >
                   {/* Left accent bar */}
                   <div className="absolute top-0 left-0 bottom-0 w-[3px] bg-accent opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <div className="w-10 h-10 flex items-center justify-center rounded-sm shrink-0 mt-0.5 bg-accent/10 text-accent">
-                    {product.icon}
-                  </div>
-                  <div className="pl-1">
-                    <h3 className="font-heading font-semibold text-base text-foreground mb-2 group-hover:text-accent transition-colors">
+                  <div className="flex items-start gap-5 pl-1">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-sm shrink-0 mt-0.5 bg-accent/10 text-accent">
+                      {product.icon}
+                    </div>
+                    <h3 className="font-heading font-semibold text-base text-foreground group-hover:text-accent transition-colors pt-2">
                       {product.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed font-body">{product.desc}</p>
-                    <span className="inline-flex items-center gap-1.5 mt-4 text-accent text-sm font-medium font-body">
-                      Learn More <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </span>
                   </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed font-body mt-4 pl-1 flex-1">{product.desc}</p>
+                  <span className="inline-flex items-center gap-1.5 mt-4 pl-1 text-accent text-sm font-medium font-body">
+                    Learn More <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </span>
                 </Link>
               </motion.div>
             ))}
