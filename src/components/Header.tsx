@@ -94,13 +94,13 @@ export default function Header() {
                   {isLast && (
                     <span className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-5 bg-border" />
                   )}
-                  {/* Left hover bar */}
-                  <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[2.5px] rounded-full bg-accent transition-all duration-200 ease-out z-10 ${
-                    isActive ? "h-5 opacity-100" : "h-0 opacity-0 group-hover:h-5 group-hover:opacity-100"
+                  {/* Left hover/active bar */}
+                  <span className={`absolute left-0 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ease-out z-10 ${
+                    isActive ? "h-5 w-[3px] bg-accent opacity-100" : "h-0 w-[2px] bg-accent/50 opacity-0 group-hover:h-5 group-hover:opacity-100"
                   }`} />
-                  {/* Right hover bar */}
-                  <span className={`absolute right-0 top-1/2 -translate-y-1/2 w-[2.5px] rounded-full bg-accent transition-all duration-200 ease-out z-10 ${
-                    isActive ? "h-5 opacity-100" : "h-0 opacity-0 group-hover:h-5 group-hover:opacity-100"
+                  {/* Right hover/active bar */}
+                  <span className={`absolute right-0 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ease-out z-10 ${
+                    isActive ? "h-5 w-[3px] bg-accent opacity-100" : "h-0 w-[2px] bg-accent/50 opacity-0 group-hover:h-5 group-hover:opacity-100"
                   }`} />
                   <Link
                     to={item.path}
