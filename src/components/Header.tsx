@@ -83,7 +83,7 @@ export default function Header() {
               return (
                 <div
                   key={item.label}
-                  className="relative h-full flex items-center"
+                  className="relative h-full flex items-center group"
                   onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
