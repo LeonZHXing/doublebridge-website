@@ -94,20 +94,16 @@ export default function Header() {
                   {isLast && (
                     <span className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-5 bg-border" />
                   )}
-                  {/* Left hover/active bar */}
-                  <span className={`absolute left-0 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ease-out z-10 ${
-                    isActive ? "h-5 w-[3px] bg-accent opacity-100" : "h-0 w-[2px] bg-accent/50 opacity-0 group-hover:h-5 group-hover:opacity-100"
-                  }`} />
-                  {/* Right hover/active bar */}
-                  <span className={`absolute right-0 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ease-out z-10 ${
-                    isActive ? "h-5 w-[3px] bg-accent opacity-100" : "h-0 w-[2px] bg-accent/50 opacity-0 group-hover:h-5 group-hover:opacity-100"
-                  }`} />
+                  {/* Left hover bar */}
+                  <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full bg-foreground/70 transition-all duration-200 ease-out z-10 h-0 opacity-0 group-hover:h-5 group-hover:opacity-100`} />
+                  {/* Right hover bar */}
+                  <span className={`absolute right-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full bg-foreground/70 transition-all duration-200 ease-out z-10 h-0 opacity-0 group-hover:h-5 group-hover:opacity-100`} />
                   <Link
                     to={item.path}
-                    className="relative px-5 h-full flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 group"
+                    className="relative px-7 h-full flex items-center justify-center gap-1.5 text-[15px] transition-colors duration-200 group"
                   >
-                    <span className={`transition-colors duration-200 ${
-                      isActive ? "text-accent" : "text-foreground/75 group-hover:text-foreground"
+                    <span className={`transition-all duration-200 ${
+                      isActive ? "text-foreground font-bold" : "text-foreground/75 font-medium group-hover:text-foreground"
                     }`}>
                       {item.label}
                     </span>
