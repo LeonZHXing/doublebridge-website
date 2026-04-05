@@ -91,18 +91,18 @@ export default function Header() {
                   {index > 0 && (
                     <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-5 bg-border" />
                   )}
+                  {/* Left hover bar */}
+                  <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[2.5px] rounded-full bg-accent transition-all duration-200 ease-out z-10 ${
+                    isActive ? "h-5 opacity-100" : "h-0 opacity-0 group-hover:h-5 group-hover:opacity-100"
+                  }`} />
+                  {/* Right hover bar */}
+                  <span className={`absolute right-0 top-1/2 -translate-y-1/2 w-[2.5px] rounded-full bg-accent transition-all duration-200 ease-out z-10 ${
+                    isActive ? "h-5 opacity-100" : "h-0 opacity-0 group-hover:h-5 group-hover:opacity-100"
+                  }`} />
                   <Link
                     to={item.path}
                     className="relative px-5 h-full flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 group"
                   >
-                    {/* Left hover bar */}
-                    <span className={`absolute left-1 top-1/2 -translate-y-1/2 w-[2.5px] rounded-full bg-accent transition-all duration-200 ease-out ${
-                      isActive ? "h-5 opacity-100" : "h-0 opacity-0 group-hover:h-5 group-hover:opacity-100"
-                    }`} />
-                    {/* Right hover bar */}
-                    <span className={`absolute right-1 top-1/2 -translate-y-1/2 w-[2.5px] rounded-full bg-accent transition-all duration-200 ease-out ${
-                      isActive ? "h-5 opacity-100" : "h-0 opacity-0 group-hover:h-5 group-hover:opacity-100"
-                    }`} />
                     <span className={`transition-colors duration-200 ${
                       isActive ? "text-accent" : "text-foreground/75 group-hover:text-foreground"
                     }`}>
