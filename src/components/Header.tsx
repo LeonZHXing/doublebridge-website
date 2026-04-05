@@ -80,16 +80,19 @@ export default function Header() {
           <nav className="hidden md:flex items-center flex-1 h-full">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
+              const isLast = index === navItems.length - 1;
               return (
                 <div
                   key={item.label}
-                  className="relative h-full flex items-center group"
+                  className="relative h-full flex items-center justify-center group"
                   onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  {/* Left vertical separator (skip first item) */}
-                  {index > 0 && (
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-5 bg-border" />
+                  {/* Left vertical separator */}
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-5 bg-border" />
+                  {/* Right vertical separator (last item only) */}
+                  {isLast && (
+                    <span className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-5 bg-border" />
                   )}
                   {/* Left hover bar */}
                   <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[2.5px] rounded-full bg-accent transition-all duration-200 ease-out z-10 ${
