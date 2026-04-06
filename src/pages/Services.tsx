@@ -9,6 +9,7 @@ import {
 export default function Services() {
   usePageTitle("Services");
   return (
+    <>
       <PageHero
         subtitle="Services"
         title="Excellence Delivered"

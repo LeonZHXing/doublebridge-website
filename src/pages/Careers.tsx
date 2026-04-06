@@ -28,6 +28,7 @@ const openings = [
 export default function Careers() {
   usePageTitle("Careers");
   return (
+    <>
       <PageHero
         subtitle="Careers"
         title="Join Our Team"

@@ -6,6 +6,7 @@ import { Zap, CheckCircle, Shield, Download } from "lucide-react";
 export default function ECTDViewer() {
   usePageTitle("ROSETTA eCTD Viewer");
   return (
+    <>
       <PageHero
         subtitle="Product"
         title="ROSETTA eCTD Viewer"

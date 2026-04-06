@@ -14,6 +14,7 @@ export default function Contact() {
   };
 
   return (
+    <>
       <PageHero
         subtitle="Contact Us"
         title="Let's Start a Conversation"

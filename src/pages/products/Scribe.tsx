@@ -51,6 +51,7 @@ const managementFeatures = [
 export default function Scribe() {
   usePageTitle("ROSETTA Scribe eCTD Publisher");
   return (
+    <>
       <PageHero
         subtitle="Product"
         title="ROSETTA Scribe eCTD Publisher"

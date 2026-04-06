@@ -39,6 +39,7 @@ const whyItMatters = [
 export default function AperioTest() {
   usePageTitle("AperioTest.AI");
   return (
+    <>
       <PageHero
         subtitle="Product"
         title="AperioTest.AI"

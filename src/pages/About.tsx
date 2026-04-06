@@ -6,6 +6,7 @@ import { Globe, Award, Users, Clock } from "lucide-react";
 export default function About() {
   usePageTitle("About");
   return (
+    <>
       <PageHero
         subtitle="About Us"
         title="Who We Are"

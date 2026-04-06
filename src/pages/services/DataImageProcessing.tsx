@@ -5,6 +5,7 @@ import { Image, Database, FileText, Workflow, Shield, Zap } from "lucide-react";
 export default function DataImageProcessing() {
   usePageTitle("Data & Image Processing");
   return (
+    <>
       <PageHero
         subtitle="Services"
         title="Data & Image Processing"

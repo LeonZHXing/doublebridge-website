@@ -6,6 +6,7 @@ import { Settings, Monitor, Database, Shield, Workflow, Headphones } from "lucid
 export default function ITServices() {
   usePageTitle("IT Services");
   return (
+    <>
       <PageHero
         subtitle="Services"
         title="IT Services"

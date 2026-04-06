@@ -6,6 +6,7 @@ import { Cpu, FileText, TestTube, Brain, Sparkles, Shield } from "lucide-react";
 export default function AISolutions() {
   usePageTitle("AI Solutions");
   return (
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="Purpose-Built AI for Life Sciences"

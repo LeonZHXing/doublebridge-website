@@ -6,6 +6,7 @@ import { FileText, Brain, Sparkles, Shield, Workflow, Zap } from "lucide-react";
 export default function ScribeAI() {
   usePageTitle("Scribe AI-Assisted Publishing");
   return (
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="ROSETTA Scribe — AI-Assisted Regulatory Submission Publishing"

@@ -6,6 +6,7 @@ import { Brain, Search, FileText, MessageSquare, Shield, Zap } from "lucide-reac
 export default function ECTDViewerAI() {
   usePageTitle("eCTD Viewer with AI-powered Q&A");
   return (
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="ROSETTA eCTD Viewer with AI-powered Q&A"

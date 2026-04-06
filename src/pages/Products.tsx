@@ -42,6 +42,7 @@ const products = [
 export default function Products() {
   usePageTitle("Products");
   return (
+    <>
       <PageHero
         subtitle="Products"
         title="Industry-Leading Regulatory Solutions"

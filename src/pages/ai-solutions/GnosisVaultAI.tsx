@@ -6,6 +6,7 @@ import { Brain, MessageSquare, Database, Shield, Users, Search } from "lucide-re
 export default function GnosisVaultAI() {
   usePageTitle("GnosisVault AI-powered Q&A");
   return (
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="ROSETTA GnosisVault — AI-Powered Q&A for Regulatory Teams"

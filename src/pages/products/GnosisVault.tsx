@@ -5,6 +5,7 @@ import { Database, Lock, FileSearch, Shield } from "lucide-react";
 export default function GnosisVault() {
   usePageTitle("ROSETTA GnosisVault");
   return (
+    <>
       <PageHero
         subtitle="Product"
         title="ROSETTA GnosisVault"

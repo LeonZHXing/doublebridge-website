@@ -20,6 +20,7 @@ const staggerItem = {
 export default function Index() {
   usePageTitle();
   return (
+    <>
       {/* Hero */}
       <PageHero
         subtitle="Established 1997 · Princeton, NJ"
