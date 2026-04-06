@@ -1,9 +1,7 @@
 import { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
+import { ChevronDown, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Header from "./Header";
-import Footer from "./Footer";
 
 const subNavItems = [
   { label: "Home", path: "/products/ectd-viewer" },
@@ -27,10 +25,7 @@ export default function ECTDViewerLayout({ children }: { children: ReactNode }) 
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Main DoubleBridge header - always visible */}
-      <Header />
-
+    <>
       {/* Secondary eCTD Viewer sub-navigation bar */}
       <div className="fixed top-[72px] left-0 right-0 z-40 bg-muted/80 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center h-11">
@@ -154,8 +149,7 @@ export default function ECTDViewerLayout({ children }: { children: ReactNode }) 
         </AnimatePresence>
       </div>
 
-      <main className="flex-1 pt-[116px]">{children}</main>
-      <Footer />
-    </div>
+      <div className="pt-11">{children}</div>
+    </>
   );
 }
