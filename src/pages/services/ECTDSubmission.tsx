@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
@@ -20,7 +19,7 @@ const services = [
 export default function ECTDSubmission() {
   usePageTitle("eCTD Submission Services");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="Services"
         title="eCTD Submission Services"
@@ -49,7 +48,5 @@ export default function ECTDSubmission() {
             ))}
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

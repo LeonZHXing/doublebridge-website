@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { FileText, Brain, Sparkles, Shield, Workflow, Zap } from "lucide-react";
@@ -7,7 +6,7 @@ import { FileText, Brain, Sparkles, Shield, Workflow, Zap } from "lucide-react";
 export default function ScribeAI() {
   usePageTitle("Scribe AI-Assisted Publishing");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="ROSETTA Scribe — AI-Assisted Regulatory Submission Publishing"
@@ -82,7 +81,5 @@ export default function ScribeAI() {
             ))}
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

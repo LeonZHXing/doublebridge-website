@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Brain, Search, FileText, MessageSquare, Shield, Zap } from "lucide-react";
@@ -7,7 +6,7 @@ import { Brain, Search, FileText, MessageSquare, Shield, Zap } from "lucide-reac
 export default function ECTDViewerAI() {
   usePageTitle("eCTD Viewer with AI-powered Q&A");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="ROSETTA eCTD Viewer with AI-powered Q&A"
@@ -82,7 +81,5 @@ export default function ECTDViewerAI() {
             ))}
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

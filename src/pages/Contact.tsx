@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
@@ -15,7 +14,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="Contact Us"
         title="Let's Start a Conversation"
@@ -127,7 +126,5 @@ export default function Contact() {
             </motion.div>
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

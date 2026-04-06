@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -21,7 +20,7 @@ const staggerItem = {
 export default function Index() {
   usePageTitle();
   return (
-    <Layout>
+    <>
       {/* Hero */}
       <PageHero
         subtitle="Established 1997 · Princeton, NJ"
@@ -282,7 +281,5 @@ export default function Index() {
             </div>
           </motion.div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

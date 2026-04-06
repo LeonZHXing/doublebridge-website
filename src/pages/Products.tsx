@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero } from "@/components/PageSections";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -43,7 +42,7 @@ const products = [
 export default function Products() {
   usePageTitle("Products");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="Products"
         title="Industry-Leading Regulatory Solutions"
@@ -92,7 +91,5 @@ export default function Products() {
             </motion.div>
           ))}
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

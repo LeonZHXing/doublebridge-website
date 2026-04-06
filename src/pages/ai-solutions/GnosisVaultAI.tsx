@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Brain, MessageSquare, Database, Shield, Users, Search } from "lucide-react";
@@ -7,7 +6,7 @@ import { Brain, MessageSquare, Database, Shield, Users, Search } from "lucide-re
 export default function GnosisVaultAI() {
   usePageTitle("GnosisVault AI-powered Q&A");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="ROSETTA GnosisVault — AI-Powered Q&A for Regulatory Teams"
@@ -82,7 +81,5 @@ export default function GnosisVaultAI() {
             ))}
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

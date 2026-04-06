@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Settings, Monitor, Database, Shield, Workflow, Headphones } from "lucide-react";
@@ -7,7 +6,7 @@ import { Settings, Monitor, Database, Shield, Workflow, Headphones } from "lucid
 export default function ITServices() {
   usePageTitle("IT Services");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="Services"
         title="IT Services"
@@ -77,7 +76,5 @@ export default function ITServices() {
             />
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

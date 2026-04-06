@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import {
@@ -10,7 +9,7 @@ import {
 export default function Services() {
   usePageTitle("Services");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="Services"
         title="Excellence Delivered"
@@ -95,7 +94,5 @@ export default function Services() {
             />
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

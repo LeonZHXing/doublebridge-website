@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Cpu, FileText, TestTube, Brain, Sparkles, Shield } from "lucide-react";
@@ -7,7 +6,7 @@ import { Cpu, FileText, TestTube, Brain, Sparkles, Shield } from "lucide-react";
 export default function AISolutions() {
   usePageTitle("AI Solutions");
   return (
-    <Layout>
+    <>
       <PageHero
         subtitle="AI Solutions"
         title="Purpose-Built AI for Life Sciences"
@@ -86,7 +85,5 @@ export default function AISolutions() {
             ))}
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }
