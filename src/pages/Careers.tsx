@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Briefcase, Mail } from "lucide-react";
@@ -29,7 +28,6 @@ const openings = [
 export default function Careers() {
   usePageTitle("Careers");
   return (
-    <Layout>
       <PageHero
         subtitle="Careers"
         title="Join Our Team"
@@ -101,7 +99,5 @@ export default function Careers() {
             </a>
           </motion.div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

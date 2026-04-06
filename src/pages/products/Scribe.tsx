@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { FileText, Cpu, CheckCircle, Layers } from "lucide-react";
@@ -52,7 +51,6 @@ const managementFeatures = [
 export default function Scribe() {
   usePageTitle("ROSETTA Scribe eCTD Publisher");
   return (
-    <Layout>
       <PageHero
         subtitle="Product"
         title="ROSETTA Scribe eCTD Publisher"
@@ -154,7 +152,5 @@ export default function Scribe() {
             Request a Demo
           </a>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

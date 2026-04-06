@@ -1,12 +1,10 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { FileText, Shield, Database, Workflow, Globe, Users } from "lucide-react";
 
 export default function RegulatoryIM() {
   usePageTitle("Regulatory Information Management");
   return (
-    <Layout>
       <PageHero
         subtitle="Services"
         title="Regulatory Information Management"
@@ -52,7 +50,5 @@ export default function RegulatoryIM() {
             />
           </div>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

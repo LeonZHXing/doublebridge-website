@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Cpu, Import, Search, Pencil, Download, TrendingDown, Shield, Zap, FileCheck } from "lucide-react";
@@ -40,7 +39,6 @@ const whyItMatters = [
 export default function AperioTest() {
   usePageTitle("AperioTest.AI");
   return (
-    <Layout>
       <PageHero
         subtitle="Product"
         title="AperioTest.AI"
@@ -154,7 +152,5 @@ export default function AperioTest() {
             Request a Demo
           </a>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }

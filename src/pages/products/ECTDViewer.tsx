@@ -1,5 +1,4 @@
 import { usePageTitle } from "@/hooks/use-page-title";
-import Layout from "@/components/Layout";
 import { PageHero, SectionHeading, FeatureCard } from "@/components/PageSections";
 import { motion } from "framer-motion";
 import { Zap, CheckCircle, Shield, Download } from "lucide-react";
@@ -7,7 +6,6 @@ import { Zap, CheckCircle, Shield, Download } from "lucide-react";
 export default function ECTDViewer() {
   usePageTitle("ROSETTA eCTD Viewer");
   return (
-    <Layout>
       <PageHero
         subtitle="Product"
         title="ROSETTA eCTD Viewer"
@@ -65,7 +63,5 @@ export default function ECTDViewer() {
             <Download className="w-4 h-4" /> Download Free Trial
           </a>
         </div>
-      </section>
-    </Layout>
-  );
+      </section>);
 }
