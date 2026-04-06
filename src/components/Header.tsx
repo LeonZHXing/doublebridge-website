@@ -72,7 +72,7 @@ export default function Header() {
             <img
               src={logo}
               alt="DoubleBridge Technologies"
-              className="h-[52px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              className="h-[64px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
 
