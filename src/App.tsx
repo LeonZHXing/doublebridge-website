@@ -39,33 +39,35 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/it-services" element={<ITServices />} />
-          <Route path="/services/ectd-submission" element={<ECTDSubmission />} />
-          <Route path="/services/regulatory-information-management" element={<RegulatoryIM />} />
-          <Route path="/services/data-image-processing" element={<DataImageProcessing />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/ectd-viewer" element={<ECTDViewerHome />} />
-          <Route path="/products/ectd-viewer/desktop" element={<ECTDViewerDesktop />} />
-          <Route path="/products/ectd-viewer/features" element={<ECTDViewerFeatures />} />
-          <Route path="/products/ectd-viewer/download" element={<ECTDViewerDownload />} />
-          <Route path="/products/ectd-viewer/pricing" element={<ECTDViewerPricing />} />
-          <Route path="/products/ectd-viewer/enterprise" element={<ECTDViewerEnterprise />} />
-          <Route path="/products/ectd-viewer/radars" element={<ECTDViewerRADARS />} />
-          <Route path="/products/gnosisvault" element={<GnosisVault />} />
-          <Route path="/products/scribe" element={<Scribe />} />
-          <Route path="/products/aperiotest" element={<AperioTest />} />
-          <Route path="/ai-solutions" element={<AISolutions />} />
-          <Route path="/ai-solutions/ectd-viewer-ai" element={<ECTDViewerAI />} />
-          <Route path="/ai-solutions/scribe-ai" element={<ScribeAI />} />
-          <Route path="/ai-solutions/gnosisvault-ai" element={<GnosisVaultAI />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/it-services" element={<ITServices />} />
+            <Route path="/services/ectd-submission" element={<ECTDSubmission />} />
+            <Route path="/services/regulatory-information-management" element={<RegulatoryIM />} />
+            <Route path="/services/data-image-processing" element={<DataImageProcessing />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/ectd-viewer" element={<ECTDViewerHome />} />
+            <Route path="/products/ectd-viewer/desktop" element={<ECTDViewerDesktop />} />
+            <Route path="/products/ectd-viewer/features" element={<ECTDViewerFeatures />} />
+            <Route path="/products/ectd-viewer/download" element={<ECTDViewerDownload />} />
+            <Route path="/products/ectd-viewer/pricing" element={<ECTDViewerPricing />} />
+            <Route path="/products/ectd-viewer/enterprise" element={<ECTDViewerEnterprise />} />
+            <Route path="/products/ectd-viewer/radars" element={<ECTDViewerRADARS />} />
+            <Route path="/products/gnosisvault" element={<GnosisVault />} />
+            <Route path="/products/scribe" element={<Scribe />} />
+            <Route path="/products/aperiotest" element={<AperioTest />} />
+            <Route path="/ai-solutions" element={<AISolutions />} />
+            <Route path="/ai-solutions/ectd-viewer-ai" element={<ECTDViewerAI />} />
+            <Route path="/ai-solutions/scribe-ai" element={<ScribeAI />} />
+            <Route path="/ai-solutions/gnosisvault-ai" element={<GnosisVaultAI />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
