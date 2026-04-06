@@ -29,6 +29,7 @@ import ScribeAI from "./pages/ai-solutions/ScribeAI";
 import GnosisVaultAI from "./pages/ai-solutions/GnosisVaultAI";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import Layout from "./components/Layout";
 
 const queryClient = new QueryClient();
 
