@@ -145,7 +145,7 @@ export default function Header() {
           </nav>
 
           {/* CTA - far right, Gartner style rounded button */}
-          <div className="hidden md:flex items-center ml-auto shrink-0">
+          <div className="hidden lg:flex items-center ml-auto shrink-0">
             <Link
               to="/contact"
               className="px-7 py-3 bg-primary text-primary-foreground text-[14px] font-semibold rounded-full hover:bg-primary/90 transition-all duration-200 flex items-center gap-2 group shadow-sm hover:shadow-md"
