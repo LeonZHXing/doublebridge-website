@@ -100,7 +100,7 @@ export default function Header() {
                   <span className={`absolute right-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full bg-foreground/70 transition-all duration-200 ease-out z-10 h-0 opacity-0 group-hover:h-5 group-hover:opacity-100`} />
                   <Link
                     to={item.path}
-                    className="relative px-7 h-full flex items-center justify-center gap-1.5 text-[15px] transition-colors duration-200 group"
+                    className="relative px-4 xl:px-7 h-full flex items-center justify-center gap-1.5 text-[14px] xl:text-[15px] transition-colors duration-200 group"
                   >
                     <span className={`transition-all duration-200 ${
                       isActive ? "text-foreground font-bold" : "text-foreground/75 font-medium group-hover:text-foreground"
