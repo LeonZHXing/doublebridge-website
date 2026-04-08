@@ -184,7 +184,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="md:hidden bg-card border-t border-border shadow-lg max-h-[80vh] overflow-y-auto"
+            className="lg:hidden bg-card border-t border-border shadow-lg max-h-[80vh] overflow-y-auto"
           >
             <nav className="container py-6 flex flex-col gap-1">
               {navItems.map((item) => (
