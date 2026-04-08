@@ -100,5 +100,7 @@ export default function Careers() {
             </a>
           </motion.div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

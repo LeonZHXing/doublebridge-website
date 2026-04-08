@@ -81,5 +81,7 @@ export default function ScribeAI() {
             ))}
           </div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

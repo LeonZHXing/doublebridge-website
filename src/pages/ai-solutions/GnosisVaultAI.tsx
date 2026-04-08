@@ -81,5 +81,7 @@ export default function GnosisVaultAI() {
             ))}
           </div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

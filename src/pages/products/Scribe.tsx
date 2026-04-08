@@ -153,5 +153,7 @@ export default function Scribe() {
             Request a Demo
           </a>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

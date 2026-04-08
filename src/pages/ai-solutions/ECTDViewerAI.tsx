@@ -81,5 +81,7 @@ export default function ECTDViewerAI() {
             ))}
           </div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

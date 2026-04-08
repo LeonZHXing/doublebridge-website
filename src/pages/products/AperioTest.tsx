@@ -153,5 +153,7 @@ export default function AperioTest() {
             Request a Demo
           </a>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }
