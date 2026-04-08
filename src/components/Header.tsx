@@ -47,6 +47,7 @@ const utilityLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -189,23 +190,45 @@ export default function Header() {
             <nav className="container py-6 flex flex-col gap-1">
               {navItems.map((item) => (
                 <div key={item.label}>
-                  <Link
-                    to={item.path}
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-3 text-[15px] font-semibold text-foreground hover:text-accent transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                  {item.children?.map((child) => (
-                    <Link
-                      key={child.path}
-                      to={child.path}
-                      onClick={() => setMobileOpen(false)}
-                      className="block pl-8 py-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                  {item.children ? (
+                    <button
+                      onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                      className="flex items-center justify-between w-full px-3 py-3 text-[15px] font-semibold text-foreground hover:text-accent transition-colors"
                     >
-                      {child.label}
+                      <span>{item.label}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === item.label ? "rotate-180" : ""}`} />
+                    </button>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-3 py-3 text-[15px] font-semibold text-foreground hover:text-accent transition-colors"
+                    >
+                      {item.label}
                     </Link>
-                  ))}
+                  )}
+                  <AnimatePresence>
+                    {item.children && mobileExpanded === item.label && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.path}
+                            to={child.path}
+                            onClick={() => setMobileOpen(false)}
+                            className="block pl-8 py-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ))}
               <div className="mt-4 pt-4 border-t border-border">
