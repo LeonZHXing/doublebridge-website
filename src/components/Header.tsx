@@ -77,7 +77,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav - Gartner style with vertical separators */}
-          <nav className="hidden md:flex items-center flex-1 h-full">
+          <nav className="hidden lg:flex items-center flex-1 h-full">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
               const isLast = index === navItems.length - 1;
