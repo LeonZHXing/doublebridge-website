@@ -77,7 +77,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav - Gartner style with vertical separators */}
-          <nav className="hidden md:flex items-center flex-1 h-full">
+          <nav className="hidden lg:flex items-center flex-1 h-full">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
               const isLast = index === navItems.length - 1;
@@ -100,7 +100,7 @@ export default function Header() {
                   <span className={`absolute right-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full bg-foreground/70 transition-all duration-200 ease-out z-10 h-0 opacity-0 group-hover:h-5 group-hover:opacity-100`} />
                   <Link
                     to={item.path}
-                    className="relative px-7 h-full flex items-center justify-center gap-1.5 text-[15px] transition-colors duration-200 group"
+                    className="relative px-4 xl:px-7 h-full flex items-center justify-center gap-1.5 text-[14px] xl:text-[15px] transition-colors duration-200 group"
                   >
                     <span className={`transition-all duration-200 ${
                       isActive ? "text-foreground font-bold" : "text-foreground/75 font-medium group-hover:text-foreground"
@@ -145,7 +145,7 @@ export default function Header() {
           </nav>
 
           {/* CTA - far right, Gartner style rounded button */}
-          <div className="hidden md:flex items-center ml-auto shrink-0">
+          <div className="hidden lg:flex items-center ml-auto shrink-0">
             <Link
               to="/contact"
               className="px-7 py-3 bg-primary text-primary-foreground text-[14px] font-semibold rounded-full hover:bg-primary/90 transition-all duration-200 flex items-center gap-2 group shadow-sm hover:shadow-md"
@@ -158,7 +158,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-foreground ml-auto"
+            className="lg:hidden p-2 text-foreground ml-auto"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
@@ -184,7 +184,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="md:hidden bg-card border-t border-border shadow-lg max-h-[80vh] overflow-y-auto"
+            className="lg:hidden bg-card border-t border-border shadow-lg max-h-[80vh] overflow-y-auto"
           >
             <nav className="container py-6 flex flex-col gap-1">
               {navItems.map((item) => (
