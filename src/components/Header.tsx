@@ -158,7 +158,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-foreground ml-auto"
+            className="lg:hidden p-2 text-foreground ml-auto"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
