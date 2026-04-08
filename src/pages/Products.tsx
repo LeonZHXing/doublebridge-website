@@ -91,5 +91,7 @@ export default function Products() {
             </motion.div>
           ))}
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

@@ -85,5 +85,7 @@ export default function AISolutions() {
             ))}
           </div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

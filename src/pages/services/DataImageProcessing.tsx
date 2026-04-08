@@ -51,5 +51,7 @@ export default function DataImageProcessing() {
             />
           </div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

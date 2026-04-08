@@ -64,5 +64,7 @@ export default function ECTDViewer() {
             <Download className="w-4 h-4" /> Download Free Trial
           </a>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

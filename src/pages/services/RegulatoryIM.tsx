@@ -51,5 +51,7 @@ export default function RegulatoryIM() {
             />
           </div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

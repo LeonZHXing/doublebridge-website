@@ -48,5 +48,7 @@ export default function ECTDSubmission() {
             ))}
           </div>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }

@@ -56,5 +56,7 @@ export default function GnosisVault() {
             Request a Demo
           </a>
         </div>
-      </section>);
+      </section>
+    </>
+  );
 }
