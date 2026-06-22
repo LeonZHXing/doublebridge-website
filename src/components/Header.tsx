@@ -24,7 +24,7 @@ const navItems = [
       { label: "AperioTest.AI", path: "/products/aperiotest" },
     ],
   },
-  { label: "IT Services", path: "/services/it-services" },
+  
   {
     label: "AI-Powered Solutions",
     path: "/ai-solutions",
