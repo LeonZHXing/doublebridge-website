@@ -6,17 +6,16 @@ import logo from "@/assets/logo.jpg";
 
 const navItems = [
   {
-    label: "Services",
+    label: "Life Sciences Expertise",
     path: "/services",
     children: [
-      { label: "IT Services", path: "/services/it-services" },
       { label: "eCTD Submission Services", path: "/services/ectd-submission" },
       { label: "Regulatory Information Management", path: "/services/regulatory-information-management" },
       { label: "Data & Image Processing", path: "/services/data-image-processing" },
     ],
   },
   {
-    label: "Products",
+    label: "ROSETTA Product Suite",
     path: "/products",
     children: [
       { label: "ROSETTA eCTD Viewer", path: "/products/ectd-viewer" },
@@ -25,8 +24,9 @@ const navItems = [
       { label: "AperioTest.AI", path: "/products/aperiotest" },
     ],
   },
+  { label: "IT Services", path: "/services/it-services" },
   {
-    label: "AI Solutions",
+    label: "AI-Powered Solutions",
     path: "/ai-solutions",
     children: [
       { label: "ROSETTA eCTD Viewer with AI-powered Q&A", path: "/ai-solutions/ectd-viewer-ai" },
@@ -34,8 +34,7 @@ const navItems = [
       { label: "ROSETTA GnosisVault - AI-powered Q&A", path: "/ai-solutions/gnosisvault-ai" },
     ],
   },
-  { label: "Careers", path: "/careers" },
-  { label: "About", path: "/about" },
+  { label: "Global Delivery", path: "/about" },
 ];
 
 const utilityLinks = [
