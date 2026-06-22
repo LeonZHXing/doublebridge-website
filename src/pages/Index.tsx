@@ -48,7 +48,7 @@ export default function Index() {
               },
               {
                 title: "IT Services",
-                desc: "From the very start of a project, application-specific critical success factors are addressed with an eye toward solving a business problem or automating a business process.",
+                desc: "Solving a business problem or automating a business process.",
                 linkLabel: "View IT Services",
                 to: "/services/it-services",
               },
