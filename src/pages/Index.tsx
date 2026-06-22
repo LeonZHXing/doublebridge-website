@@ -26,7 +26,6 @@ export default function Index() {
         subtitle="Established 1997 · Princeton, NJ"
         title="Bridging Business Goals with Technology Solutions"
         description="DoubleBridge Technologies has over a quarter century of experience as a pioneer in providing global Life Sciences organizations with reliable business and technology solutions & services."
-        cta={{ label: "Explore Our Services", to: "/services" }}
       />
 
       {/* 4-column feature cards — Gartner style */}
