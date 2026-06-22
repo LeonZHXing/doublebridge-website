@@ -9,10 +9,10 @@ const navItems = [
     label: "Services",
     path: "/services",
     children: [
+      { label: "IT Services", path: "/services/it-services" },
       { label: "eCTD Submission Services", path: "/services/ectd-submission" },
       { label: "Regulatory Information Management", path: "/services/regulatory-information-management" },
       { label: "Data & Image Processing", path: "/services/data-image-processing" },
-      { label: "IT Services", path: "/services/it-services" },
     ],
   },
   {
