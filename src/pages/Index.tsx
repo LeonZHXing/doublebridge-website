@@ -32,7 +32,7 @@ export default function Index() {
       {/* 4-column feature cards — Gartner style */}
       <section className="border-b border-border bg-primary text-primary-foreground">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-primary-foreground/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-primary-foreground/10">
             {[
               {
                 title: "Life Sciences Expertise",
@@ -45,6 +45,12 @@ export default function Index() {
                 desc: "Industry-leading tools for eCTD submissions, regulatory publishing, and document management.",
                 linkLabel: "View Products",
                 to: "/products",
+              },
+              {
+                title: "IT Services",
+                desc: "From the very start of a project, application-specific critical success factors are addressed with an eye toward solving a business problem or automating a business process.",
+                linkLabel: "View IT Services",
+                to: "/services/it-services",
               },
               {
                 title: "AI-Powered Solutions",
